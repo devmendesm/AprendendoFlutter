@@ -1,11 +1,13 @@
 import 'dart:io';
 
 void main() {
+  // Formas de se criar "variáveis"
   var a = 10; // TIPO NÃO MUDA DEPOIS
   int b = 5; // TIPO DEFINIDO
   //Object c = 'nome'; // FUNÇÕES DE OBJETO
   //dynamic d = 20; // PODE SER ALTERADO O TIPO
   //late double x; //Se nao for usada não consome memória
+
   print(a + b);
   print(a - b);
   print(a * b);
@@ -14,6 +16,7 @@ void main() {
   
   print("-"*30);
 
+  // Lista
   List alunos = ["Ana", "Ivo", "Teo"];
   print(alunos);
   print(alunos[1]);
@@ -35,7 +38,7 @@ void main() {
 
   print('-'*30);
 
-  // Somente valores únicos
+  // SET Somente valores únicos
   Set<String> sets = {"Ana", "Ivo", "Teo"};
 
   print(sets);
@@ -78,4 +81,3 @@ void main() {
   print('-'*30);
 
 }
- 
