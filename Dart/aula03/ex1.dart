@@ -4,9 +4,10 @@ void main() {
   stdout.write("Digite um número: ");
   int numero = int.parse(stdin.readLineSync()!);
 
-  for(int i = 0; i <= numero; i++) {
+  print("Utilizando estrutura FOR");
+  for (int i = 0; i <= numero; i++) {
     if (i % 2 == 0) {
-      print(i);
+      stdout.write("$i... ");
     } else {
       continue;
     }
@@ -14,10 +15,12 @@ void main() {
   print("Acabou");
 
   int i = 0;
-  while(i <= numero) {
+  print("Utilizando estrutura WHILE");
+  while (i <= numero) {
     if (i % 2 == 0) {
-      print(i);
+      stdout.write("$i... ");
     }
     i++;
   }
+  print("Acabou");
 }
