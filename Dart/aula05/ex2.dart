@@ -5,7 +5,7 @@ void main() {
 
   bool sair = false;
 
-  while(sair == false){
+  while (sair == false) {
     print("\n--- Sistema de Gestão de Clientes ---");
     print("1. Adicionar cliente");
     print("2. Atualizar pedidos de cliente");
@@ -16,10 +16,10 @@ void main() {
     stdout.write("Escolha a opção desejada: ");
     String opcao = stdin.readLineSync()!;
 
-    switch(opcao){
+    switch (opcao) {
       case "1":
         stdout.write("Nome: ");
-        String nome = stdin.readLineSync()!;
+        String nome = stdin.readLineSync()!.toUpperCase();
         stdout.write("Idade: ");
         int idade = int.parse(stdin.readLineSync()!);
         stdout.write("Número de pedidos: ");
@@ -30,7 +30,7 @@ void main() {
         break;
       case "2":
         stdout.write("Nome do cliente: ");
-        String nome = stdin.readLineSync()!;
+        String nome = stdin.readLineSync()!.toUpperCase();
         if (clientes.containsKey(nome)) {
           stdout.write("Novo número de pedidos: ");
           int pedidos = int.parse(stdin.readLineSync()!);
@@ -40,6 +40,31 @@ void main() {
           print("Cliente não foi encontrado!");
         }
         break;
+      case "3":
+        stdout.write("Nome do cliente: ");
+        String nome = stdin.readLineSync()!.toUpperCase();
+        if (clientes.containsKey(nome)) {
+          clientes.remove(nome);
+          print("$nome removido com sucesso!");
+        } else {
+          print("Cliente não encontrado!");
+        }
+        break;
+      case "4":
+        stdout.write("Nome do cliente: ");
+        String nome = stdin.readLineSync()!.toUpperCase();
+        if (clientes.containsKey(nome)){
+          print("$nome fez ${clientes[nome]!["pedidos"]} pedidos.");
+        } else {
+          print("Cliente não encontrado!");
+        }
+        break;
+      case "0":
+        sair = true;
+        print("Saindo...");
+        break;
+      default:
+      print("Opção inválida. Tente novamente!");
     }
   }
 }
